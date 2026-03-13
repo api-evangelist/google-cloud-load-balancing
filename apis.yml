@@ -1,0 +1,48 @@
+name: Google Cloud Load Balancing
+description: >-
+  Google Cloud Load Balancing provides high-performance, scalable load balancing
+  for Google Cloud Platform services, distributing traffic across multiple
+  instances, regions, and backends to ensure reliability and low latency.
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/google-cloud-load-balancing/refs/heads/main/apis.yml
+created: '2026-03-13'
+modified: '2026-03-13'
+specificationVersion: '0.18'
+tags:
+  - Load Balancing
+  - Networking
+  - Traffic Management
+  - Google Cloud
+  - Infrastructure
+apis:
+  - name: Google Cloud Load Balancing API
+    description: >-
+      The Google Cloud Load Balancing API enables programmatic management of load
+      balancers, backend services, health checks, URL maps, and forwarding rules
+      to distribute traffic across Google Cloud resources.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://cloud.google.com/load-balancing/docs
+    baseURL: https://compute.googleapis.com/compute/v1
+    tags:
+      - Load Balancing
+      - Backend Services
+      - Health Checks
+      - Forwarding Rules
+    properties:
+      - type: OpenAPI
+        url: openapi/openapi.yml
+      - type: JSONSchema
+        url: json-schema/json-schema.yml
+      - type: JSONLDContext
+        url: json-ld/json-ld.yml
+common:
+  - type: GettingStarted
+    url: https://cloud.google.com/load-balancing/docs/how-to
+  - type: Pricing
+    url: https://cloud.google.com/load-balancing/pricing
+  - type: JSONLDContext
+    url: json-ld/json-ld.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

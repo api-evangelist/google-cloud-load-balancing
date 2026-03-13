@@ -1,0 +1,85 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://raw.githubusercontent.com/api-evangelist/google-cloud-load-balancing/refs/heads/main/json-schema/json-schema.yml
+title: Google Cloud Backend Service
+description: A backend service resource for Google Cloud Load Balancing
+type: object
+properties:
+  id:
+    type: string
+    description: Unique identifier for the resource
+  name:
+    type: string
+    description: Name of the backend service resource
+    pattern: ^[a-z]([-a-z0-9]*[a-z0-9])?$
+  description:
+    type: string
+    description: An optional description of the backend service
+  protocol:
+    type: string
+    enum:
+      - HTTP
+      - HTTPS
+      - TCP
+      - SSL
+      - UDP
+    description: The protocol this backend service uses to communicate with backends
+  port:
+    type: integer
+    minimum: 1
+    maximum: 65535
+    description: Default port used by the backend service
+  healthChecks:
+    type: array
+    items:
+      type: string
+      format: uri
+    description: URLs of the health checks attached to this backend service
+  backends:
+    type: array
+    items:
+      type: object
+      properties:
+        group:
+          type: string
+          format: uri
+          description: URL of the instance group resource
+        balancingMode:
+          type: string
+          enum:
+            - UTILIZATION
+            - RATE
+            - CONNECTION
+        capacityScaler:
+          type: number
+          minimum: 0
+          maximum: 1
+          description: Capacity scaler for the backend
+        maxUtilization:
+          type: number
+          minimum: 0
+          maximum: 1
+          description: Target utilization for the backend group
+      required:
+        - group
+    description: List of backends serving this backend service
+  loadBalancingScheme:
+    type: string
+    enum:
+      - EXTERNAL
+      - INTERNAL
+      - INTERNAL_MANAGED
+    description: The load balancing scheme used by this backend service
+  timeoutSec:
+    type: integer
+    minimum: 1
+    description: Backend service timeout in seconds
+  selfLink:
+    type: string
+    format: uri
+    description: Server-defined URL for the resource
+  creationTimestamp:
+    type: string
+    format: date-time
+    description: Timestamp when the resource was created
+required:
+  - name
