@@ -1,3 +1,4 @@
+aid: google-cloud-load-balancing
 name: Google Cloud Load Balancing
 description: >-
   Google Cloud Load Balancing provides high-performance, scalable load balancing
@@ -7,8 +8,9 @@ image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jp
 url: >-
   https://raw.githubusercontent.com/api-evangelist/google-cloud-load-balancing/refs/heads/main/apis.yml
 created: '2026-03-13'
-modified: '2026-03-13'
-specificationVersion: '0.18'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+type: Index
 tags:
   - Load Balancing
   - Networking
@@ -30,17 +32,37 @@ apis:
       - Health Checks
       - Forwarding Rules
     properties:
+      - type: Documentation
+        url: https://cloud.google.com/load-balancing/docs/reference/rest
       - type: OpenAPI
         url: openapi/openapi.yml
+      - type: Authentication
+        url: https://cloud.google.com/docs/authentication
+      - type: Getting Started
+        url: https://cloud.google.com/load-balancing/docs/how-to
       - type: JSONSchema
         url: json-schema/json-schema.yml
       - type: JSONLDContext
         url: json-ld/json-ld.yml
 common:
-  - type: GettingStarted
+  - type: Portal
+    url: https://cloud.google.com/load-balancing
+  - type: Getting Started
     url: https://cloud.google.com/load-balancing/docs/how-to
+  - type: Documentation
+    url: https://cloud.google.com/load-balancing/docs
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
   - type: Pricing
     url: https://cloud.google.com/load-balancing/pricing
+  - type: Terms of Service
+    url: https://cloud.google.com/terms
+  - type: Privacy Policy
+    url: https://policies.google.com/privacy
+  - type: Status
+    url: https://status.cloud.google.com/
+  - type: Support
+    url: https://cloud.google.com/load-balancing/docs/support
   - type: JSONLDContext
     url: json-ld/json-ld.yml
 maintainers:
