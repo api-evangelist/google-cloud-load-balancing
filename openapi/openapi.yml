@@ -15,10 +15,10 @@ servers:
 tags:
   - name: BackendServices
     description: Manage backend services for load balancers
-  - name: HealthChecks
-    description: Manage health checks for backend services
   - name: ForwardingRules
     description: Manage forwarding rules for directing traffic
+  - name: HealthChecks
+    description: Manage health checks for backend services
   - name: UrlMaps
     description: Manage URL maps for routing traffic
 paths:
