@@ -25,7 +25,7 @@ paths:
   /projects/{project}/global/backendServices:
     get:
       operationId: listBackendServices
-      summary: List backend services
+      summary: Google Cloud Load Balancing List backend services
       description: Retrieves the list of backend services available to the specified project.
       tags:
         - BackendServices
@@ -45,7 +45,7 @@ paths:
                 $ref: '#/components/schemas/BackendServiceList'
     post:
       operationId: createBackendService
-      summary: Create a backend service
+      summary: Google Cloud Load Balancing Create a backend service
       description: Creates a backend service in the specified project.
       tags:
         - BackendServices
@@ -71,7 +71,7 @@ paths:
   /projects/{project}/global/backendServices/{backendService}:
     get:
       operationId: getBackendService
-      summary: Get a backend service
+      summary: Google Cloud Load Balancing Get a backend service
       description: Returns the specified backend service resource.
       tags:
         - BackendServices
@@ -95,7 +95,7 @@ paths:
                 $ref: '#/components/schemas/BackendService'
     delete:
       operationId: deleteBackendService
-      summary: Delete a backend service
+      summary: Google Cloud Load Balancing Delete a backend service
       description: Deletes the specified backend service.
       tags:
         - BackendServices
@@ -120,7 +120,7 @@ paths:
   /projects/{project}/global/healthChecks:
     get:
       operationId: listHealthChecks
-      summary: List health checks
+      summary: Google Cloud Load Balancing List health checks
       description: Retrieves the list of health check resources available to the specified project.
       tags:
         - HealthChecks
@@ -140,7 +140,7 @@ paths:
   /projects/{project}/global/forwardingRules:
     get:
       operationId: listForwardingRules
-      summary: List forwarding rules
+      summary: Google Cloud Load Balancing List forwarding rules
       description: Retrieves the list of forwarding rules available to the specified project.
       tags:
         - ForwardingRules
@@ -160,7 +160,7 @@ paths:
   /projects/{project}/global/urlMaps:
     get:
       operationId: listUrlMaps
-      summary: List URL maps
+      summary: Google Cloud Load Balancing List URL maps
       description: Retrieves the list of URL map resources available to the specified project.
       tags:
         - UrlMaps
