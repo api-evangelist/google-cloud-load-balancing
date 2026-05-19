@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Load Balancing API — UrlMaps
+  description: 'Google Cloud Load Balancing API — UrlMaps. 1 operations. Lead operation: Google Cloud Load Balancing List
+    URL maps. Self-contained Naftiko capability covering one Google Cloud Load Balancing business surface.'
+  tags:
+  - Google Cloud Load Balancing
+  - UrlMaps
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_LOAD_BALANCING_API_KEY: GOOGLE_CLOUD_LOAD_BALANCING_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-urlmaps
+    baseUri: https://compute.googleapis.com/compute/v1
+    description: Google Cloud Load Balancing API — UrlMaps business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-project-global-urlMaps
+      path: /projects/{project}/global/urlMaps
+      operations:
+      - name: listurlmaps
+        method: GET
+        description: Google Cloud Load Balancing List URL maps
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_LOAD_BALANCING_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: openapi-urlmaps-rest
+    port: 8080
+    description: REST adapter for Google Cloud Load Balancing API — UrlMaps. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/projects/{project}/global/urlmaps
+      name: projects-project-global-urlmaps
+      description: REST surface for projects-project-global-urlMaps.
+      operations:
+      - method: GET
+        name: listurlmaps
+        description: Google Cloud Load Balancing List URL maps
+        call: openapi-urlmaps.listurlmaps
+        with:
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-urlmaps-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud Load Balancing API — UrlMaps. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: google-cloud-load-balancing-list
+      description: Google Cloud Load Balancing List URL maps
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-urlmaps.listurlmaps
+      with:
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.

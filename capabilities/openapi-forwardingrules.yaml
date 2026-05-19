@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Load Balancing API — ForwardingRules
+  description: 'Google Cloud Load Balancing API — ForwardingRules. 1 operations. Lead operation: Google Cloud Load Balancing
+    List forwarding rules. Self-contained Naftiko capability covering one Google Cloud Load Balancing business surface.'
+  tags:
+  - Google Cloud Load Balancing
+  - ForwardingRules
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_LOAD_BALANCING_API_KEY: GOOGLE_CLOUD_LOAD_BALANCING_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-forwardingrules
+    baseUri: https://compute.googleapis.com/compute/v1
+    description: Google Cloud Load Balancing API — ForwardingRules business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-project-global-forwardingRules
+      path: /projects/{project}/global/forwardingRules
+      operations:
+      - name: listforwardingrules
+        method: GET
+        description: Google Cloud Load Balancing List forwarding rules
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_LOAD_BALANCING_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: openapi-forwardingrules-rest
+    port: 8080
+    description: REST adapter for Google Cloud Load Balancing API — ForwardingRules. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/projects/{project}/global/forwardingrules
+      name: projects-project-global-forwardingrules
+      description: REST surface for projects-project-global-forwardingRules.
+      operations:
+      - method: GET
+        name: listforwardingrules
+        description: Google Cloud Load Balancing List forwarding rules
+        call: openapi-forwardingrules.listforwardingrules
+        with:
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-forwardingrules-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud Load Balancing API — ForwardingRules. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: google-cloud-load-balancing-list
+      description: Google Cloud Load Balancing List forwarding rules
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-forwardingrules.listforwardingrules
+      with:
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Load Balancing API — HealthChecks
+  description: 'Google Cloud Load Balancing API — HealthChecks. 1 operations. Lead operation: Google Cloud Load Balancing
+    List health checks. Self-contained Naftiko capability covering one Google Cloud Load Balancing business surface.'
+  tags:
+  - Google Cloud Load Balancing
+  - HealthChecks
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_LOAD_BALANCING_API_KEY: GOOGLE_CLOUD_LOAD_BALANCING_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-healthchecks
+    baseUri: https://compute.googleapis.com/compute/v1
+    description: Google Cloud Load Balancing API — HealthChecks business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-project-global-healthChecks
+      path: /projects/{project}/global/healthChecks
+      operations:
+      - name: listhealthchecks
+        method: GET
+        description: Google Cloud Load Balancing List health checks
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_LOAD_BALANCING_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: openapi-healthchecks-rest
+    port: 8080
+    description: REST adapter for Google Cloud Load Balancing API — HealthChecks. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/projects/{project}/global/healthchecks
+      name: projects-project-global-healthchecks
+      description: REST surface for projects-project-global-healthChecks.
+      operations:
+      - method: GET
+        name: listhealthchecks
+        description: Google Cloud Load Balancing List health checks
+        call: openapi-healthchecks.listhealthchecks
+        with:
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-healthchecks-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud Load Balancing API — HealthChecks. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: google-cloud-load-balancing-list
+      description: Google Cloud Load Balancing List health checks
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-healthchecks.listhealthchecks
+      with:
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.

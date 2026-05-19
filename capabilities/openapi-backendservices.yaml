@@ -1,0 +1,208 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Load Balancing API — BackendServices
+  description: 'Google Cloud Load Balancing API — BackendServices. 4 operations. Lead operation: Google Cloud Load Balancing
+    List backend services. Self-contained Naftiko capability covering one Google Cloud Load Balancing business surface.'
+  tags:
+  - Google Cloud Load Balancing
+  - BackendServices
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_LOAD_BALANCING_API_KEY: GOOGLE_CLOUD_LOAD_BALANCING_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-backendservices
+    baseUri: https://compute.googleapis.com/compute/v1
+    description: Google Cloud Load Balancing API — BackendServices business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-project-global-backendServices
+      path: /projects/{project}/global/backendServices
+      operations:
+      - name: listbackendservices
+        method: GET
+        description: Google Cloud Load Balancing List backend services
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          description: Project ID for this request
+          required: true
+      - name: createbackendservice
+        method: POST
+        description: Google Cloud Load Balancing Create a backend service
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: projects-project-global-backendServices-backendService
+      path: /projects/{project}/global/backendServices/{backendService}
+      operations:
+      - name: getbackendservice
+        method: GET
+        description: Google Cloud Load Balancing Get a backend service
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: backendService
+          in: path
+          type: string
+          required: true
+      - name: deletebackendservice
+        method: DELETE
+        description: Google Cloud Load Balancing Delete a backend service
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: backendService
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_LOAD_BALANCING_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: openapi-backendservices-rest
+    port: 8080
+    description: REST adapter for Google Cloud Load Balancing API — BackendServices. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/projects/{project}/global/backendservices
+      name: projects-project-global-backendservices
+      description: REST surface for projects-project-global-backendServices.
+      operations:
+      - method: GET
+        name: listbackendservices
+        description: Google Cloud Load Balancing List backend services
+        call: openapi-backendservices.listbackendservices
+        with:
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createbackendservice
+        description: Google Cloud Load Balancing Create a backend service
+        call: openapi-backendservices.createbackendservice
+        with:
+          project: rest.project
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{project}/global/backendservices/{backendservice}
+      name: projects-project-global-backendservices-backendservice
+      description: REST surface for projects-project-global-backendServices-backendService.
+      operations:
+      - method: GET
+        name: getbackendservice
+        description: Google Cloud Load Balancing Get a backend service
+        call: openapi-backendservices.getbackendservice
+        with:
+          project: rest.project
+          backendService: rest.backendService
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletebackendservice
+        description: Google Cloud Load Balancing Delete a backend service
+        call: openapi-backendservices.deletebackendservice
+        with:
+          project: rest.project
+          backendService: rest.backendService
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-backendservices-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud Load Balancing API — BackendServices. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: google-cloud-load-balancing-list
+      description: Google Cloud Load Balancing List backend services
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-backendservices.listbackendservices
+      with:
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-load-balancing-create
+      description: Google Cloud Load Balancing Create a backend service
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-backendservices.createbackendservice
+      with:
+        project: tools.project
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-load-balancing-get
+      description: Google Cloud Load Balancing Get a backend service
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-backendservices.getbackendservice
+      with:
+        project: tools.project
+        backendService: tools.backendService
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-load-balancing-delete
+      description: Google Cloud Load Balancing Delete a backend service
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: openapi-backendservices.deletebackendservice
+      with:
+        project: tools.project
+        backendService: tools.backendService
+      outputParameters:
+      - type: object
+        mapping: $.
