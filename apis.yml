@@ -3,7 +3,7 @@ name: Google Cloud Load Balancing
 description: >-
   Google Cloud Load Balancing provides high-performance, scalable load balancing for Google Cloud Platform services,
   distributing traffic across multiple instances, regions, and backends to ensure reliability and low latency.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-load-balancing/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -20,7 +20,7 @@ apis:
     description: >-
       The Google Cloud Load Balancing API enables programmatic management of load balancers, backend services, health
       checks, URL maps, and forwarding rules to distribute traffic across Google Cloud resources.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://cloud.google.com/load-balancing/docs
     baseURL: https://compute.googleapis.com/compute/v1
     tags:
