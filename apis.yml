@@ -42,6 +42,12 @@ apis:
       - type: JSONLDContext
         url: json-ld/json-ld.yml
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-cloud-load-balancing-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-cloud-load-balancing-domain-security.yml
+  - type: Authentication
+    url: authentication/google-cloud-load-balancing-authentication.yml
   - type: OAuthScopes
     url: scopes/google-cloud-load-balancing-scopes.yml
   - type: GitHubOrganization
