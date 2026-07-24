@@ -1,0 +1,202 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Load Balancing BackendServices API
+  description: Provides programmatic access to manage load balancers, backend services, health checks, URL maps, and forwarding rules for distributing traffic across Google Cloud resources.
+  version: v1
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/load-balancing/docs
+servers:
+- url: https://compute.googleapis.com/compute/v1
+  description: Google Cloud Load Balancing production endpoint
+security:
+- oauth2:
+  - https://www.googleapis.com/auth/compute
+tags:
+- name: BackendServices
+  description: Manage backend services for load balancers
+paths:
+  /projects/{project}/global/backendServices:
+    get:
+      operationId: listBackendServices
+      summary: Google Cloud Load Balancing List backend services
+      description: Retrieves the list of backend services available to the specified project.
+      tags:
+      - BackendServices
+      parameters:
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Project ID for this request
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendServiceList'
+    post:
+      operationId: createBackendService
+      summary: Google Cloud Load Balancing Create a backend service
+      description: Creates a backend service in the specified project.
+      tags:
+      - BackendServices
+      parameters:
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BackendService'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{project}/global/backendServices/{backendService}:
+    get:
+      operationId: getBackendService
+      summary: Google Cloud Load Balancing Get a backend service
+      description: Returns the specified backend service resource.
+      tags:
+      - BackendServices
+      parameters:
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: backendService
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendService'
+    delete:
+      operationId: deleteBackendService
+      summary: Google Cloud Load Balancing Delete a backend service
+      description: Deletes the specified backend service.
+      tags:
+      - BackendServices
+      parameters:
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: backendService
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        status:
+          type: string
+        targetLink:
+          type: string
+    BackendServiceList:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/BackendService'
+    Backend:
+      type: object
+      properties:
+        group:
+          type: string
+          description: URL of the instance group resource
+        balancingMode:
+          type: string
+          enum:
+          - UTILIZATION
+          - RATE
+          - CONNECTION
+        capacityScaler:
+          type: number
+          description: Multiplier applied to the backend capacity
+    BackendService:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the resource
+        name:
+          type: string
+          description: Name of the resource
+        description:
+          type: string
+          description: An optional description of the resource
+        protocol:
+          type: string
+          enum:
+          - HTTP
+          - HTTPS
+          - TCP
+          - SSL
+          - UDP
+          description: The protocol this backend service uses
+        port:
+          type: integer
+          description: Default port used by the backend service
+        healthChecks:
+          type: array
+          items:
+            type: string
+          description: URLs of the health checks for this backend service
+        backends:
+          type: array
+          items:
+            $ref: '#/components/schemas/Backend'
+          description: The list of backends that serve this backend service
+        loadBalancingScheme:
+          type: string
+          enum:
+          - EXTERNAL
+          - INTERNAL
+          - INTERNAL_MANAGED
+          description: The load balancing scheme for this backend service
+        selfLink:
+          type: string
+          description: Server-defined URL for the resource
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/compute: Manage your Google Compute Engine resources
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud Platform resources
