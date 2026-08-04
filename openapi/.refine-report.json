@@ -1,0 +1,20 @@
+{
+  "provider": "google-cloud-load-balancing",
+  "sources": [
+    "google-cloud-load-balancing-backendservices-api-openapi.yml",
+    "google-cloud-load-balancing-forwardingrules-api-openapi.yml",
+    "google-cloud-load-balancing-healthchecks-api-openapi.yml",
+    "google-cloud-load-balancing-urlmaps-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-cloud-load-balancing-backendservices-api-openapi.yml",
+    "google-cloud-load-balancing-forwardingrules-api-openapi.yml",
+    "google-cloud-load-balancing-healthchecks-api-openapi.yml",
+    "google-cloud-load-balancing-urlmaps-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

@@ -1,0 +1,173 @@
+{
+  "info": {
+    "_postman_id": "53ecbe82-2c36-4968-b342-8e517d9d5758",
+    "name": "Google Cloud Load Balancing BackendServices UrlMaps API",
+    "description": "Provides programmatic access to manage load balancers, backend services, health checks, URL maps, and forwarding rules for distributing traffic across Google Cloud resources.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:47:59.000Z",
+    "updatedAt": "2026-07-28T01:47:59.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-53ecbe82-2c36-4968-b342-8e517d9d5758"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{project}",
+          "item": [
+            {
+              "name": "global",
+              "item": [
+                {
+                  "name": "urlMaps",
+                  "item": [
+                    {
+                      "name": "Google Cloud Load Balancing List URL maps",
+                      "id": "30e242be-243f-4bd3-a624-2afeddfa99fb",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:project/global/urlMaps",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":project",
+                            "global",
+                            "urlMaps"
+                          ],
+                          "variable": [
+                            {
+                              "id": "e7b2a412-2d42-42c1-aded-9de566376ce8",
+                              "key": "project",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Retrieves the list of URL map resources available to the specified project."
+                      },
+                      "response": [
+                        {
+                          "id": "a21315f1-a3b9-48d9-b3c3-439854e3d3da",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:project/global/urlMaps",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":project",
+                                "global",
+                                "urlMaps"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "project"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T01:48:00.000Z",
+                          "updatedAt": "2026-07-28T01:48:00.000Z",
+                          "uid": "35240-a21315f1-a3b9-48d9-b3c3-439854e3d3da"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:48:00.000Z",
+                      "updatedAt": "2026-07-28T01:48:00.000Z",
+                      "uid": "35240-30e242be-243f-4bd3-a624-2afeddfa99fb"
+                    }
+                  ],
+                  "id": "186ff9a5-4746-4964-8633-dc0d18b809d5",
+                  "createdAt": "2026-07-28T01:48:00.000Z",
+                  "updatedAt": "2026-07-28T01:48:00.000Z",
+                  "uid": "35240-186ff9a5-4746-4964-8633-dc0d18b809d5"
+                }
+              ],
+              "id": "0ad0ede4-93b7-4364-b770-f8d476ca36e4",
+              "createdAt": "2026-07-28T01:48:00.000Z",
+              "updatedAt": "2026-07-28T01:48:00.000Z",
+              "uid": "35240-0ad0ede4-93b7-4364-b770-f8d476ca36e4"
+            }
+          ],
+          "id": "84988589-1f18-4225-88b8-ae66f76128ea",
+          "createdAt": "2026-07-28T01:48:00.000Z",
+          "updatedAt": "2026-07-28T01:48:00.000Z",
+          "uid": "35240-84988589-1f18-4225-88b8-ae66f76128ea"
+        }
+      ],
+      "id": "3c2f92fd-33a1-4da3-b7cc-841911c97bd6",
+      "createdAt": "2026-07-28T01:48:00.000Z",
+      "updatedAt": "2026-07-28T01:48:00.000Z",
+      "uid": "35240-3c2f92fd-33a1-4da3-b7cc-841911c97bd6"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/compute https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://compute.googleapis.com/compute/v1"
+    }
+  ]
+}

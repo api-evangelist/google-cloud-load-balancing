@@ -1,0 +1,173 @@
+{
+  "info": {
+    "_postman_id": "786be2fc-a553-4df4-a47a-188ed14225f3",
+    "name": "Google Cloud Load Balancing BackendServices ForwardingRules API",
+    "description": "Provides programmatic access to manage load balancers, backend services, health checks, URL maps, and forwarding rules for distributing traffic across Google Cloud resources.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:47:57.000Z",
+    "updatedAt": "2026-07-28T01:47:58.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-786be2fc-a553-4df4-a47a-188ed14225f3"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{project}",
+          "item": [
+            {
+              "name": "global",
+              "item": [
+                {
+                  "name": "forwardingRules",
+                  "item": [
+                    {
+                      "name": "Google Cloud Load Balancing List forwarding rules",
+                      "id": "bd29d203-224a-4655-bb3a-9da2e0e92645",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:project/global/forwardingRules",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":project",
+                            "global",
+                            "forwardingRules"
+                          ],
+                          "variable": [
+                            {
+                              "id": "3488addb-aa76-4f85-a816-e19be86a6671",
+                              "key": "project",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Retrieves the list of forwarding rules available to the specified project."
+                      },
+                      "response": [
+                        {
+                          "id": "a596cb12-0765-4c79-a5ab-3b358894eb27",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:project/global/forwardingRules",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":project",
+                                "global",
+                                "forwardingRules"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "project"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T01:47:58.000Z",
+                          "updatedAt": "2026-07-28T01:47:58.000Z",
+                          "uid": "35240-a596cb12-0765-4c79-a5ab-3b358894eb27"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:47:58.000Z",
+                      "updatedAt": "2026-07-28T01:47:58.000Z",
+                      "uid": "35240-bd29d203-224a-4655-bb3a-9da2e0e92645"
+                    }
+                  ],
+                  "id": "122cb918-8f79-4433-99f9-cee271627b66",
+                  "createdAt": "2026-07-28T01:47:58.000Z",
+                  "updatedAt": "2026-07-28T01:47:58.000Z",
+                  "uid": "35240-122cb918-8f79-4433-99f9-cee271627b66"
+                }
+              ],
+              "id": "fdadf63c-7215-45c1-b6a2-23524663cd88",
+              "createdAt": "2026-07-28T01:47:58.000Z",
+              "updatedAt": "2026-07-28T01:47:58.000Z",
+              "uid": "35240-fdadf63c-7215-45c1-b6a2-23524663cd88"
+            }
+          ],
+          "id": "f8588a82-3134-490e-a6ca-16796b56e096",
+          "createdAt": "2026-07-28T01:47:58.000Z",
+          "updatedAt": "2026-07-28T01:47:58.000Z",
+          "uid": "35240-f8588a82-3134-490e-a6ca-16796b56e096"
+        }
+      ],
+      "id": "0ce5ec9a-939f-4771-8252-337a03660289",
+      "createdAt": "2026-07-28T01:47:58.000Z",
+      "updatedAt": "2026-07-28T01:47:58.000Z",
+      "uid": "35240-0ce5ec9a-939f-4771-8252-337a03660289"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/compute https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://compute.googleapis.com/compute/v1"
+    }
+  ]
+}

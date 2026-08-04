@@ -1,0 +1,173 @@
+{
+  "info": {
+    "_postman_id": "633c18fa-7b64-45cf-a21a-e48b3581ceeb",
+    "name": "Google Cloud Load Balancing BackendServices HealthChecks API",
+    "description": "Provides programmatic access to manage load balancers, backend services, health checks, URL maps, and forwarding rules for distributing traffic across Google Cloud resources.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:47:58.000Z",
+    "updatedAt": "2026-07-28T01:47:58.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-633c18fa-7b64-45cf-a21a-e48b3581ceeb"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{project}",
+          "item": [
+            {
+              "name": "global",
+              "item": [
+                {
+                  "name": "healthChecks",
+                  "item": [
+                    {
+                      "name": "Google Cloud Load Balancing List health checks",
+                      "id": "668f2402-4279-4baa-80a9-d882bb34395f",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:project/global/healthChecks",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":project",
+                            "global",
+                            "healthChecks"
+                          ],
+                          "variable": [
+                            {
+                              "id": "dc0a43cd-9ef9-40fc-b0f3-c1533d53d288",
+                              "key": "project",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Retrieves the list of health check resources available to the specified project."
+                      },
+                      "response": [
+                        {
+                          "id": "c9760a84-4d47-4e58-a03f-3086e7a404de",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:project/global/healthChecks",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":project",
+                                "global",
+                                "healthChecks"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "project"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T01:47:59.000Z",
+                          "updatedAt": "2026-07-28T01:47:59.000Z",
+                          "uid": "35240-c9760a84-4d47-4e58-a03f-3086e7a404de"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:47:59.000Z",
+                      "updatedAt": "2026-07-28T01:47:59.000Z",
+                      "uid": "35240-668f2402-4279-4baa-80a9-d882bb34395f"
+                    }
+                  ],
+                  "id": "46e750d5-5cee-4337-ac8d-23a97a555679",
+                  "createdAt": "2026-07-28T01:47:59.000Z",
+                  "updatedAt": "2026-07-28T01:47:59.000Z",
+                  "uid": "35240-46e750d5-5cee-4337-ac8d-23a97a555679"
+                }
+              ],
+              "id": "4e48a347-c179-4244-b36c-20a5230b3300",
+              "createdAt": "2026-07-28T01:47:59.000Z",
+              "updatedAt": "2026-07-28T01:47:59.000Z",
+              "uid": "35240-4e48a347-c179-4244-b36c-20a5230b3300"
+            }
+          ],
+          "id": "bca06822-3d70-4d15-92c7-d0612e213c89",
+          "createdAt": "2026-07-28T01:47:59.000Z",
+          "updatedAt": "2026-07-28T01:47:59.000Z",
+          "uid": "35240-bca06822-3d70-4d15-92c7-d0612e213c89"
+        }
+      ],
+      "id": "a037d35c-2e13-4748-adef-cdebc4a34809",
+      "createdAt": "2026-07-28T01:47:59.000Z",
+      "updatedAt": "2026-07-28T01:47:59.000Z",
+      "uid": "35240-a037d35c-2e13-4748-adef-cdebc4a34809"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/compute https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://compute.googleapis.com/compute/v1"
+    }
+  ]
+}
