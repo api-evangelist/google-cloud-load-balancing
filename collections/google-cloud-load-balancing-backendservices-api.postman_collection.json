@@ -1,0 +1,506 @@
+{
+  "item": [
+    {
+      "id": "44ffee25-d761-496e-8b70-f5d06d69cde4",
+      "name": "BackendServices",
+      "description": {
+        "content": "Manage backend services for load balancers",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "11e8167f-c3e5-4649-b168-81abe3b1ae0e",
+          "name": "Google Cloud Load Balancing List backend services",
+          "request": {
+            "name": "Google Cloud Load Balancing List backend services",
+            "description": {
+              "content": "Retrieves the list of backend services available to the specified project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "global",
+                "backendServices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) Project ID for this request"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a637e13a-2f26-416d-8ecf-9ab53502c657",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "global",
+                    "backendServices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) Project ID for this request"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"protocol\": \"UDP\",\n      \"port\": 3423,\n      \"healthChecks\": [\n        \"string\",\n        \"string\"\n      ],\n      \"backends\": [\n        {\n          \"group\": \"string\",\n          \"balancingMode\": \"RATE\",\n          \"capacityScaler\": 9708.175801302741\n        },\n        {\n          \"group\": \"string\",\n          \"balancingMode\": \"UTILIZATION\",\n          \"capacityScaler\": 9734.309979319414\n        }\n      ],\n      \"loadBalancingScheme\": \"INTERNAL_MANAGED\",\n      \"selfLink\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"protocol\": \"HTTP\",\n      \"port\": 515,\n      \"healthChecks\": [\n        \"string\",\n        \"string\"\n      ],\n      \"backends\": [\n        {\n          \"group\": \"string\",\n          \"balancingMode\": \"UTILIZATION\",\n          \"capacityScaler\": 3305.602425506401\n        },\n        {\n          \"group\": \"string\",\n          \"balancingMode\": \"CONNECTION\",\n          \"capacityScaler\": 6717.913572536776\n        }\n      ],\n      \"loadBalancingScheme\": \"INTERNAL\",\n      \"selfLink\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9d537577-cf2c-4cd2-ab5f-bbbb4c4daf24",
+          "name": "Google Cloud Load Balancing Create a backend service",
+          "request": {
+            "name": "Google Cloud Load Balancing Create a backend service",
+            "description": {
+              "content": "Creates a backend service in the specified project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "global",
+                "backendServices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"protocol\": \"<string>\",\n  \"port\": \"<integer>\",\n  \"healthChecks\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"backends\": [\n    {\n      \"group\": \"<string>\",\n      \"balancingMode\": \"<string>\",\n      \"capacityScaler\": \"<number>\"\n    },\n    {\n      \"group\": \"<string>\",\n      \"balancingMode\": \"<string>\",\n      \"capacityScaler\": \"<number>\"\n    }\n  ],\n  \"loadBalancingScheme\": \"<string>\",\n  \"selfLink\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "99ac227a-355f-407b-83d3-d086893b361a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "global",
+                    "backendServices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"protocol\": \"<string>\",\n  \"port\": \"<integer>\",\n  \"healthChecks\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"backends\": [\n    {\n      \"group\": \"string\",\n      \"balancingMode\": \"RATE\",\n      \"capacityScaler\": 1177.3259768643807\n    },\n    {\n      \"group\": \"string\",\n      \"balancingMode\": \"RATE\",\n      \"capacityScaler\": 5464.348421961831\n    }\n  ],\n  \"loadBalancingScheme\": \"<string>\",\n  \"selfLink\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"status\": \"string\",\n  \"targetLink\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "65763fa5-5bc7-45fb-b575-83cda40ee480",
+          "name": "Google Cloud Load Balancing Get a backend service",
+          "request": {
+            "name": "Google Cloud Load Balancing Get a backend service",
+            "description": {
+              "content": "Returns the specified backend service resource.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "global",
+                "backendServices",
+                ":backendService"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "backendService",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "32f4f785-cee8-4ce1-a39c-47ad2fac55b6",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "global",
+                    "backendServices",
+                    ":backendService"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "backendService",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"protocol\": \"SSL\",\n  \"port\": 8398,\n  \"healthChecks\": [\n    \"string\",\n    \"string\"\n  ],\n  \"backends\": [\n    {\n      \"group\": \"string\",\n      \"balancingMode\": \"UTILIZATION\",\n      \"capacityScaler\": 547.1450569366132\n    },\n    {\n      \"group\": \"string\",\n      \"balancingMode\": \"UTILIZATION\",\n      \"capacityScaler\": 4245.855083069886\n    }\n  ],\n  \"loadBalancingScheme\": \"INTERNAL\",\n  \"selfLink\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cb41459c-cd66-4071-a5bf-6e51c25a47a9",
+          "name": "Google Cloud Load Balancing Delete a backend service",
+          "request": {
+            "name": "Google Cloud Load Balancing Delete a backend service",
+            "description": {
+              "content": "Deletes the specified backend service.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "global",
+                "backendServices",
+                ":backendService"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "backendService",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b6407054-8956-42d1-bd72-ecc366c70806",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "global",
+                    "backendServices",
+                    ":backendService"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "backendService",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"status\": \"string\",\n  \"targetLink\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://compute.googleapis.com/compute/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/compute https://www.googleapis.com/auth/cloud-platform"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "96ab00c5-2cd8-4b21-bde7-d0c7943e8f66",
+    "name": "Google Cloud Load Balancing BackendServices API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Provides programmatic access to manage load balancers, backend services, health checks, URL maps, and forwarding rules for distributing traffic across Google Cloud resources.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}

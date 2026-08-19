@@ -1,0 +1,117 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Load Balancing BackendServices API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "BackendServices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Load Balancing List backend services",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://compute.googleapis.com/compute/v1/projects/:project/global/backendServices",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path",
+                "description": "Project ID for this request"
+              }
+            ]
+          },
+          "docs": "Retrieves the list of backend services available to the specified project."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Load Balancing Create a backend service",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://compute.googleapis.com/compute/v1/projects/:project/global/backendServices",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a backend service in the specified project."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Load Balancing Get a backend service",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://compute.googleapis.com/compute/v1/projects/:project/global/backendServices/:backendService",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "backendService",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns the specified backend service resource."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Load Balancing Delete a backend service",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://compute.googleapis.com/compute/v1/projects/:project/global/backendServices/:backendService",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "backendService",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes the specified backend service."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
