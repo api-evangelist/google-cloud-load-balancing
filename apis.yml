@@ -3,6 +3,18 @@ name: Google Cloud Load Balancing
 description: >-
   Google Cloud Load Balancing provides high-performance, scalable load balancing for Google Cloud Platform services,
   distributing traffic across multiple instances, regions, and backends to ensure reliability and low latency.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
