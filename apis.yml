@@ -87,7 +87,7 @@ apis:
   humanURL: https://cloud.google.com/load-balancing/docs
   baseURL: https://compute.googleapis.com/compute/v1
   tags:
-  - Health Checks
+  - HealthChecks
   tags_raw:
   - HealthChecks
   properties:
