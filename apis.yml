@@ -67,6 +67,8 @@ apis:
   humanURL: https://cloud.google.com/load-balancing/docs
   baseURL: https://compute.googleapis.com/compute/v1
   tags:
+  - Forwarding Rules
+  tags_raw:
   - ForwardingRules
   properties:
   - type: OpenAPI
@@ -87,7 +89,7 @@ apis:
   humanURL: https://cloud.google.com/load-balancing/docs
   baseURL: https://compute.googleapis.com/compute/v1
   tags:
-  - HealthChecks
+  - Health Checks
   tags_raw:
   - HealthChecks
   properties:
