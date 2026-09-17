@@ -61,18 +61,16 @@ apis:
     url: json-schema/json-schema.yml
   - type: JSONLDContext
     url: json-ld/json-ld.yml
-- aid: google-cloud-load-balancing:google-cloud-load-balancing-forwardingrules-api
-  name: Google Cloud Load Balancing ForwardingRules API
+- aid: google-cloud-load-balancing:google-cloud-load-balancing-forwarding-rules-api
+  name: Google Cloud Load Balancing Forwarding Rules API
   description: Manage forwarding rules for directing traffic
   humanURL: https://cloud.google.com/load-balancing/docs
   baseURL: https://compute.googleapis.com/compute/v1
   tags:
   - Forwarding Rules
-  tags_raw:
-  - ForwardingRules
   properties:
   - type: OpenAPI
-    url: openapi/google-cloud-load-balancing-forwardingrules-api-openapi.yml
+    url: openapi/google-cloud-load-balancing-forwarding-rules-api-openapi.yml
   - type: Documentation
     url: https://cloud.google.com/load-balancing/docs/reference/rest
   - type: Authentication
@@ -83,18 +81,16 @@ apis:
     url: json-schema/json-schema.yml
   - type: JSONLDContext
     url: json-ld/json-ld.yml
-- aid: google-cloud-load-balancing:google-cloud-load-balancing-healthchecks-api
-  name: Google Cloud Load Balancing HealthChecks API
+- aid: google-cloud-load-balancing:google-cloud-load-balancing-health-checks-api
+  name: Google Cloud Load Balancing Health Checks API
   description: Manage health checks for backend services
   humanURL: https://cloud.google.com/load-balancing/docs
   baseURL: https://compute.googleapis.com/compute/v1
   tags:
   - Health Checks
-  tags_raw:
-  - HealthChecks
   properties:
   - type: OpenAPI
-    url: openapi/google-cloud-load-balancing-healthchecks-api-openapi.yml
+    url: openapi/google-cloud-load-balancing-health-checks-api-openapi.yml
   - type: Documentation
     url: https://cloud.google.com/load-balancing/docs/reference/rest
   - type: Authentication
@@ -105,16 +101,16 @@ apis:
     url: json-schema/json-schema.yml
   - type: JSONLDContext
     url: json-ld/json-ld.yml
-- aid: google-cloud-load-balancing:google-cloud-load-balancing-urlmaps-api
-  name: Google Cloud Load Balancing UrlMaps API
+- aid: google-cloud-load-balancing:google-cloud-load-balancing-url-maps-api
+  name: Google Cloud Load Balancing URL maps API
   description: Manage URL maps for routing traffic
   humanURL: https://cloud.google.com/load-balancing/docs
   baseURL: https://compute.googleapis.com/compute/v1
   tags:
-  - UrlMaps
+  - URL maps
   properties:
   - type: OpenAPI
-    url: openapi/google-cloud-load-balancing-urlmaps-api-openapi.yml
+    url: openapi/google-cloud-load-balancing-url-maps-api-openapi.yml
   - type: Documentation
     url: https://cloud.google.com/load-balancing/docs/reference/rest
   - type: Authentication
