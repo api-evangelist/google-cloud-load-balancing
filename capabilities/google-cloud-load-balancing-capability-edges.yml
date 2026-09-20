@@ -1,0 +1,25 @@
+slug: google-cloud-load-balancing
+provider: Google Cloud Load Balancing
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Telecommunications
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: BackendServices
+  spec_file: google-cloud-load-balancing-backendservices-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.8
+  evidence: POST /projects/{project}/global/backendServices  createBackendService — "manage load balancers,
+    backend services, health checks, URL maps, and forwarding rules"
+  reason: CRUD over cloud load-balancer backend service resources; this is compute/network cloud infrastructure
+    configuration.
