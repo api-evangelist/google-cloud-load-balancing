@@ -122,6 +122,8 @@ apis:
   - type: JSONLDContext
     url: json-ld/json-ld.yml
 common:
+  - type: Plans
+    url: plans/google-cloud-load-balancing-plans-pricing.yml
   - type: Website
     url: https://www.google.com/
   - type: CapabilityMap
