@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Cloud Load Balancing BackendServices URL Maps API
+  title: Google Cloud Load Balancing Forwarding Rules API
   description: Provides programmatic access to manage load balancers, backend services, health checks, URL maps, and forwarding rules for distributing traffic across Google Cloud resources.
   version: v1
   contact:
@@ -13,16 +13,16 @@ security:
 - oauth2:
   - https://www.googleapis.com/auth/compute
 tags:
-- name: UrlMaps
-  description: Manage URL maps for routing traffic
+- name: Forwarding Rules
+  description: Manage forwarding rules for directing traffic
 paths:
-  /projects/{project}/global/urlMaps:
+  /projects/{project}/global/forwardingRules:
     get:
-      operationId: listUrlMaps
-      summary: Google Cloud Load Balancing List URL maps
-      description: Retrieves the list of URL map resources available to the specified project.
+      operationId: listForwardingRules
+      summary: Google Cloud Load Balancing List forwarding rules
+      description: Retrieves the list of forwarding rules available to the specified project.
       tags:
-      - UrlMaps
+      - Forwarding Rules
       parameters:
       - name: project
         in: path
@@ -35,10 +35,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UrlMapList'
+                $ref: '#/components/schemas/ForwardingRuleList'
 components:
   schemas:
-    UrlMapList:
+    ForwardingRuleList:
       type: object
       properties:
         items:

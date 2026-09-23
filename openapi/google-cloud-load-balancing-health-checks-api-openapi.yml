@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Cloud Load Balancing BackendServices Forwarding Rules API
+  title: Google Cloud Load Balancing Health Checks API
   description: Provides programmatic access to manage load balancers, backend services, health checks, URL maps, and forwarding rules for distributing traffic across Google Cloud resources.
   version: v1
   contact:
@@ -13,16 +13,16 @@ security:
 - oauth2:
   - https://www.googleapis.com/auth/compute
 tags:
-- name: ForwardingRules
-  description: Manage forwarding rules for directing traffic
+- name: Health Checks
+  description: Manage health checks for backend services
 paths:
-  /projects/{project}/global/forwardingRules:
+  /projects/{project}/global/healthChecks:
     get:
-      operationId: listForwardingRules
-      summary: Google Cloud Load Balancing List forwarding rules
-      description: Retrieves the list of forwarding rules available to the specified project.
+      operationId: listHealthChecks
+      summary: Google Cloud Load Balancing List health checks
+      description: Retrieves the list of health check resources available to the specified project.
       tags:
-      - ForwardingRules
+      - Health Checks
       parameters:
       - name: project
         in: path
@@ -35,10 +35,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ForwardingRuleList'
+                $ref: '#/components/schemas/HealthCheckList'
 components:
   schemas:
-    ForwardingRuleList:
+    HealthCheckList:
       type: object
       properties:
         items:

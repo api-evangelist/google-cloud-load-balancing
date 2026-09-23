@@ -1,10 +1,7 @@
 {
   "provider": "google-cloud-load-balancing",
   "sources": [
-    "google-cloud-load-balancing-backendservices-api-openapi.yml",
-    "google-cloud-load-balancing-forwardingrules-api-openapi.yml",
-    "google-cloud-load-balancing-healthchecks-api-openapi.yml",
-    "google-cloud-load-balancing-urlmaps-api-openapi.yml"
+    "_original/openapi.yml"
   ],
   "outputs": [
     "google-cloud-load-balancing-backendservices-api-openapi.yml",
@@ -12,15 +9,21 @@
     "google-cloud-load-balancing-healthchecks-api-openapi.yml",
     "google-cloud-load-balancing-urlmaps-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 3 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
-    "google-cloud-load-balancing-backendservices-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-cloud-load-balancing-forwardingrules-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-cloud-load-balancing-healthchecks-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-cloud-load-balancing-urlmaps-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "superseded outputs removed: google-cloud-load-balancing-forwarding-rules-api-openapi.yml, google-cloud-load-balancing-health-checks-api-openapi.yml, google-cloud-load-balancing-url-maps-api-openapi.yml",
+    "apis.yml register: written (+3 apis, 4 total)"
   ],
-  "skipped": []
+  "skipped": [
+    "google-cloud-load-balancing-backendservices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-cloud-load-balancing-forwarding-rules-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-cloud-load-balancing-health-checks-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-cloud-load-balancing-url-maps-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

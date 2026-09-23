@@ -113,17 +113,6 @@ paths:
                 $ref: '#/components/schemas/Operation'
 components:
   schemas:
-    Operation:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        status:
-          type: string
-        targetLink:
-          type: string
     BackendServiceList:
       type: object
       properties:
@@ -146,6 +135,17 @@ components:
         capacityScaler:
           type: number
           description: Multiplier applied to the backend capacity
+    Operation:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        status:
+          type: string
+        targetLink:
+          type: string
     BackendService:
       type: object
       properties:
