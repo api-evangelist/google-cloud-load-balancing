@@ -122,6 +122,10 @@ apis:
   - type: JSONLDContext
     url: json-ld/json-ld.yml
 common:
+  - type: RateLimits
+    url: rate-limits/google-cloud-load-balancing-rate-limits.yml
+  - type: FinOps
+    url: finops/google-cloud-load-balancing-finops.yml
   - type: Plans
     url: plans/google-cloud-load-balancing-plans-pricing.yml
   - type: Website
